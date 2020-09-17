@@ -228,10 +228,7 @@ func (s *server) callback(w http.ResponseWriter, r *http.Request) {
 
 	groups := []string{}
 	groupsClaim, ok := claims["groups"]
-	if groupsClaim != nil {
-		groups = interfaceSliceToStringSlice(groupsClaim.([]interface{}))
-	}
-	groups = interfaceSliceToStringSlice(claims["groups"].([]interface{}))
+	groups = interfaceSliceToStringSlice(groupsClaim.([]interface{}))
 
 	session.Values[userSessionUserID] = userID
 	session.Values[userSessionGroups] = groups
