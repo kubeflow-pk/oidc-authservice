@@ -226,7 +226,7 @@ func (s *server) callback(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var groups []string
+	groups := []string{}
 	groupsClaim, ok := claims["groups"]
 	if groupsClaim != nil {
 		groups = interfaceSliceToStringSlice(groupsClaim.([]interface{}))
